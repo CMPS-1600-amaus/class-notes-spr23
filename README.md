@@ -15,9 +15,7 @@ In lecture, we will regularly code programming examples. I highly
 recommend that you experiment and play with these examples yourself.
 
 The easiest way to do so is to use [Visual Studio
-Code](https://code.visualstudio.com/). This is an Integrated Development
-Environment (IDE) produced by microsoft. "Integrated Development
-Environment" is just a fancy term for a highly functional code editor.
+Code](https://code.visualstudio.com/). If you are not familiar with it, VS Code is just a fancy and highly functional code editor.
 
 VS Code natively supports jupyter notebooks and git. Using VS Code,
 you can "clone" a git repository and then open any of our jupyter
