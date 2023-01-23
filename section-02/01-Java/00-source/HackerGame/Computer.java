@@ -1,16 +1,14 @@
-public class Player {
+public class Computer {
     private int health;
     private int damage;
     private String name;
     private String description;
-    public static int numPlayers = 0;
 
-    public Player(String name, int health, int damage, String description){
+    public Computer(String name, int health, int damage, String description){
         this.name = name;
         this.health = health;
         this.damage = damage;
         this.description = description;
-        Player.numPlayers += 1;
     }
 
     public String toString(){

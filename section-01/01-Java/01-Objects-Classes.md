@@ -27,3 +27,43 @@ Constructors are special functions whose job it is to initialize all **instance 
 
 **Instance variables** are those attributes which every object gets its own copy of.
 
+## Access Modifers
+
+`public` and `private` are two of java's access modifiers.
+
+Access modifiers go before every attribute or method declaration.
+
+They set permissions on where the attribute or method is accessible from.
+
+`private` means that the feature is only accessible within the class in which it is derived.
+
+`public` means that it is accessible everywhere.
+
+By default, we should make all instance variable private unless we have very good reason not to.
+
+There are two other access modifiers, the **default** access modifier and `protected`. We'll talk about them later.
+
+## `static`
+
+Whether or not a class feature is `static` determines whether it belongs to each instance of the class individually or to the class as a whole.
+
+If an attribute is `static`, then there is only one copy of the variable and it is shared by all instances of the class.
+
+Example:
+
+a static variable `population` in a Sim class. Every sim would share this same variable. At any point, we can ask the Sim class what the current population is.
+
+``` java
+public class Sim{
+    public static pop = 0;
+    //...
+}
+
+public class Sims{
+    public static void main(String[] args){
+        System.out.println(Sim.pop)
+    }
+}
+```
+
+The `main` method is static since it is the starting point of the program and must be called before any objects are created.
