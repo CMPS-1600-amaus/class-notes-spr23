@@ -16,4 +16,18 @@ public class Monster {
         output += "attack power: " + this.attackPower + "\n";
         return output;
     }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public void attack(Hero hero) {
+        String attackMessage = String.format("%S slashes at %S", this.getName(), hero.getName());
+        System.out.println(attackMessage);
+        hero.takeDamage(this.attackPower);
+    }
+
+    public void takeDamage(int damage) {
+        this.health -= damage;
+    }
 }

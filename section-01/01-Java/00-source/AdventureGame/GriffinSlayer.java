@@ -5,5 +5,23 @@ public class GriffinSlayer {
 
         Monster monster = new Monster("Arzaan the Greedy", 1000, 50);
         System.out.println(monster.toString());
+
+        hero.attack(monster);
+        System.out.println(monster.toString());
+
+        monster.attack(hero);
+
+        System.out.println(hero.toString());
+
     }
+
+    public void enterCombat(Hero hero, Monster monster){
+        while(true){
+            hero.attack(monster);
+            if(!monster.isAlive()){
+                break;
+            }
+        }
+    }
+
 }
