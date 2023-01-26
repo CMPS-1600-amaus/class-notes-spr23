@@ -27,11 +27,11 @@ Constructors are special functions whose job it is to initialize all **instance 
 
 **Instance variables** are those attributes which every object gets its own copy of.
 
-### The `this` keyword
+## The `this` keyword
 
 `this` is the self-referential identifier. We use to directly refer to instance variables or instance methods. 
 
-## Access Modifers
+# Access Modifers
 
 `public` and `private` are two of java's access modifiers.
 
@@ -47,7 +47,7 @@ By default, we should make all instance variable private unless we have very goo
 
 There are two other access modifiers, the **default** access modifier and `protected`. We'll talk about them later.
 
-## `static`
+# static
 
 Whether or not a class feature is `static` determines whether it belongs to each instance of the class individually or to the class as a whole.
 
@@ -71,6 +71,3 @@ public class Sims{
 ```
 
 The `main` method is static since it is the starting point of the program and must be called before any objects are created.
-
-# Primitive vs Reference Types
-
