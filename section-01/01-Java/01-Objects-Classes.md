@@ -27,6 +27,8 @@ Constructors are special functions whose job it is to initialize all **instance 
 
 **Instance variables** are those attributes which every object gets its own copy of.
 
+If we don't implement any constuctors, java provides a default constructor. This is a constructor which takes no parameters and does nothing except call on a super classes constructor. (see inheritance notes)
+
 ## The `this` keyword
 
 `this` is the self-referential identifier. We use to directly refer to instance variables or instance methods. 
