@@ -34,3 +34,21 @@ public class Subclass extends SuperClass {
     }
 }
 ```
+
+## Abstract Classes
+
+An abstract class is a class with one or more abstract methods.
+
+An abstract method is a method declaration without any implementation.
+
+Why use abstract methods?
+
+Abstract methods are useful in an inheritance hierarchy when we know that subclasses need some functionality but it doesn't make sense to implement it at the superclass level.
+
+For example: `takeTurn()` in GriffinSlayer.
+
+Suppose we have a class `Shape` with subclasses `Circle` and `Square`.
+
+We should be able to able calculate the `area()` for all shapes.
+
+We can't implement `area()` in the Shape class because we need to know what Shape we are in order to calculate it. So we make it abstract and force all subclasses to provide their specific implementation.

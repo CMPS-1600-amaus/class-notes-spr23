@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Character {
+abstract public class Character {
     private int health;
     private int attackPower;
     private String name;
@@ -38,6 +38,8 @@ public class Character {
     public int getChanceToHit(){
         return this.chanceToHit;
     }
+
+    abstract public void takeTurn(Character other);
 
     public void attack(Character other) {
         int attackRoll = rand.nextInt(100);

@@ -12,13 +12,17 @@ public class GriffinSlayer {
 
     public static void enterCombat(Hero hero, Monster monster){
         while(true){
-            hero.attack(monster);
+            hero.takeTurn(monster);
+            if(hero.hasFled()){
+                System.out.println("L");
+                break;
+            }
             if(!monster.isAlive()){
                 System.out.printf("%S is SLAIN!!",monster.getName());
                 break;
             }
 
-            monster.attack(hero);
+            monster.takeTurn(hero);
             if(!hero.isAlive()){
                 System.out.printf("%S is SLAIN!!",hero.getName());
                 break;
