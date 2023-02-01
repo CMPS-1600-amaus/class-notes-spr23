@@ -15,6 +15,7 @@ public class Hero extends Character {
         System.out.printf("1) Attack\n");
         System.out.printf("2) Meditate\n");
         System.out.printf("3) Flee\n");
+        System.out.printf("Enter your choice: ");
         int choice = input.nextInt();
         switch(choice){
             case 1:

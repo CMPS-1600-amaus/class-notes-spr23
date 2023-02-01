@@ -42,3 +42,12 @@ All classes ultimately inherit from the Object class.
 
 If we write a class that doesn't extend anything, by default, it extends Object. When that class's constructor is call, the first thing that happens is Object's constructor is called, even if we don't explicitly do it.
 
+## Overriding Methods
+
+A subclass can **override** its superclass's methods. That is, it can provide its own specific implementation.
+
+## Overloading Methods
+
+If we create a copy a method that we already have but give it different parameters, we are **overloading** that method.
+
+## Abstract Classes

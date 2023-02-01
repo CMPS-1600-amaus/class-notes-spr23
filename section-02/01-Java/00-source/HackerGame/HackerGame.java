@@ -7,6 +7,7 @@ public class HackerGame {
         Computer computer = new Computer("Jonathan", 100, 200, "Our doom!");
         System.out.println(computer.toString());
 
+        //Character player2 = new Player("Aaron the 15th", 1337, 137, "Better than Aaron the 14th!");
         enterCombat(player, computer);
     }
 
