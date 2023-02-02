@@ -1,6 +1,7 @@
 import java.util.Random;
 
 abstract public class Character {
+    private int maxHealth;
     private int health;
     private int baseDamage;
     private String name;
@@ -18,6 +19,7 @@ abstract public class Character {
 
     public Character(String name, int health, int damage, String description){
         this.name = name;
+        this.maxHealth = health;
         this.health = health;
         this.baseDamage = damage;
         this.description = description;
@@ -43,6 +45,10 @@ abstract public class Character {
         return this.health;
     }
 
+    public int getMaxHealth(){
+        return this.maxHealth;
+    }
+
     public int getBaseDamage(){
         return this.baseDamage;
     }
@@ -55,6 +61,8 @@ abstract public class Character {
         return this.health > 0;
     }
 
+    abstract void takeTurn(Character other);
+
     public void attack(Character other){
         if(other.isInvincible()){
             System.out.printf("%S is unable to attack %S!\n", 
@@ -65,7 +73,6 @@ abstract public class Character {
         }
         double modifier = rand.nextDouble();
         modifier = (modifier*0.4) + 0.8;
-        
         int damage = (int)(this.baseDamage * modifier);
         // apply temporary damage buff, then reset it back to 1.0
         damage *= this.tempDamageBuff;
