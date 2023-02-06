@@ -23,6 +23,7 @@ abstract public class Character {
         this.health = health;
         this.baseDamage = damage;
         this.description = description;
+        this.tempDamageBuff = 1.0;
         rand = new Random();
     }
 

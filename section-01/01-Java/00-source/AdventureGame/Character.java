@@ -6,12 +6,14 @@ abstract public class Character {
     private String name;
     private int chanceToHit;
     private Random rand;
+    private int numTurnsVulnerable;
 
     public Character(String name, int health, int attackPower, int chanceToHit){
         this.name = name;
         this.health = health;
         this.attackPower = attackPower;
         this.chanceToHit = chanceToHit;
+        this.numTurnsVulnerable = 0;
         this.rand = new Random();
     }
 
@@ -39,15 +41,37 @@ abstract public class Character {
         return this.chanceToHit;
     }
 
+    public int getNumTurnsVulnerable(){
+        return this.numTurnsVulnerable;
+    }
+
+    public void setNumTurnsVulnerable(int numTurns){
+        this.numTurnsVulnerable = numTurns;
+    }
+
+    public boolean isVulnerable(){
+        return this.numTurnsVulnerable > 0;
+    }
+
+    public void decrementTurnsVulnerable(){
+        this.numTurnsVulnerable--;
+    }
+
     abstract public void takeTurn(Character other);
 
     public void attack(Character other) {
         int attackRoll = rand.nextInt(100);
-        if(attackRoll < getChanceToHit()){
+        int chanceToHitModifier = 0;
+        if(other.isVulnerable()){
+            chanceToHitModifier = 20;
+            other.decrementTurnsVulnerable();
+        }
+        if(attackRoll < (getChanceToHit() + chanceToHitModifier)){
             System.out.printf("%S slashes at %S for %d damage!\n", this.getName(), other.getName(), this.attackPower);
             other.takeDamage(this.attackPower);
+        } else {
+            System.out.printf("%S MISSED!\n",getName());
         }
-        System.out.printf("%S MISSED!\n",getName());
     }
 
     public void takeDamage(int damage) {
@@ -55,6 +79,6 @@ abstract public class Character {
     }
 
     public boolean isAlive(){
-        return this.health >= 0;
+        return this.health > 0;
     }
 }

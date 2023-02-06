@@ -52,3 +52,25 @@ Suppose we have a class `Shape` with subclasses `Circle` and `Square`.
 We should be able to able calculate the `area()` for all shapes.
 
 We can't implement `area()` in the Shape class because we need to know what Shape we are in order to calculate it. So we make it abstract and force all subclasses to provide their specific implementation.
+
+# Interface
+
+An **interface** is a completely abstract class. It is a class with no concrete methods.
+
+An interface is similar to an abstract in that it defines functionality that subclasses will have even though it can't be implemented outside of the individual subclasses.
+
+In java, there is the `Comparable` interface.
+
+Classes that implement the `Comparable` must define a `compareTo` method which allows for their objects to be compared.
+
+Interfaces are used when we have some general behavior that we need to be done uniformly across the board.
+
+To make a class a subclass of an interface, we use the keys `implements`.
+
+e.g:
+
+```java
+public class QuarterBack implements Comparable {
+    //...
+}
+```

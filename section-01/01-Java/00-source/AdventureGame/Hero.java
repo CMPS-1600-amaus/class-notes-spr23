@@ -7,10 +7,12 @@ public class Hero extends Character {
     public Hero(String name, int health, int attackPower, int chanceToHit){
         super(name, health, attackPower, chanceToHit);
         this.fledFlag = false;
+        this.input = new Scanner(System.in);
     }
 
     public void takeTurn(Character other){
         System.out.printf("%S has %d health.\n", other.getName(), other.getHealth());
+        System.out.printf("%S has %d hp.\n",this.getName(), this.getHealth());
         System.out.printf("Would you like to...\n");
         System.out.printf("1) Attack\n");
         System.out.printf("2) Meditate\n");
@@ -20,13 +22,14 @@ public class Hero extends Character {
         switch(choice){
             case 1:
                 this.attack(other);
+                break;
             case 2:
                 this.meditate();
+                break;
             case 3:
                 this.fledFlag = true;
+                break;
         }
-
-        this.attack(other);
     }
 
     public boolean hasFled(){
@@ -35,6 +38,7 @@ public class Hero extends Character {
 
     public void meditate(){
         System.out.printf("You got this. We believe in you.\n");
+        setNumTurnsVulnerable(1);
         this.takeDamage(-10);
     }
 }
