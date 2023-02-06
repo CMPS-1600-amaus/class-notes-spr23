@@ -7,6 +7,8 @@ abstract public class Character {
     private int chanceToHit;
     private Random rand;
     private int numTurnsVulnerable;
+    private boolean fledFlag;
+    private Weapon weapon;
 
     public Character(String name, int health, int attackPower, int chanceToHit){
         this.name = name;
@@ -15,6 +17,8 @@ abstract public class Character {
         this.chanceToHit = chanceToHit;
         this.numTurnsVulnerable = 0;
         this.rand = new Random();
+        this.fledFlag = false;
+        this.weapon = new Weapon("Fists", 1);
     }
 
     public String toString(){
@@ -80,5 +84,13 @@ abstract public class Character {
 
     public boolean isAlive(){
         return this.health > 0;
+    }
+
+    public boolean hasFled(){
+        return this.fledFlag;
+    }
+
+    public void setAsFled(){
+        this.fledFlag = true;
     }
 }

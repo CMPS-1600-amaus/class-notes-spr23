@@ -74,3 +74,17 @@ public class QuarterBack implements Comparable {
     //...
 }
 ```
+
+# Polymorphism
+
+Polymorphism says that if we have a superclass variable and call on methods that are override by subclasses, the behavior of the method call will be determined by the subclass. The subclass's overridden method will be executed.
+
+For example:
+
+```java
+Character player = new Hero("Henry IV", 100, 2, 100);
+Character monster = new Monster("Arzaan the Greedy", 1000, 50, 10);
+
+player.takeTurn() // will execute the Hero class's takeTurn
+monster.takeTurn() // will execute the Monster class's takeTurn
+```

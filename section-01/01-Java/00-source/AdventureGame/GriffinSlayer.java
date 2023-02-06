@@ -1,16 +1,15 @@
 public class GriffinSlayer {
     public static void main(String[] args){
-        Hero hero = new Hero("Henry IV", 100, 2, 100);
+        Character hero = new Hero("Henry IV", 100, 2, 100);
         System.out.println(hero.toString());
 
-        Monster monster = new Monster("Arzaan the Greedy", 1000, 50, 10);
+        Character monster = new Monster("Arzaan the Greedy", 1000, 50, 10);
         System.out.println(monster.toString());
 
         enterCombat(hero, monster);
-
     }
 
-    public static void enterCombat(Hero hero, Monster monster){
+    public static void enterCombat(Character hero, Character monster){
         while(true){
             hero.takeTurn(monster);
             if(hero.hasFled()){

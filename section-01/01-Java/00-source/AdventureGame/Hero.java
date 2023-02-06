@@ -2,11 +2,9 @@ import java.util.Scanner;
 
 public class Hero extends Character {
     private Scanner input;
-    private boolean fledFlag;
 
     public Hero(String name, int health, int attackPower, int chanceToHit){
         super(name, health, attackPower, chanceToHit);
-        this.fledFlag = false;
         this.input = new Scanner(System.in);
     }
 
@@ -27,13 +25,9 @@ public class Hero extends Character {
                 this.meditate();
                 break;
             case 3:
-                this.fledFlag = true;
+                this.setAsFled();
                 break;
         }
-    }
-
-    public boolean hasFled(){
-        return this.fledFlag;
     }
 
     public void meditate(){
