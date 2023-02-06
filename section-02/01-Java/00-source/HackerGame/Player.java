@@ -1,10 +1,6 @@
-import java.util.Scanner;
-
 public class Player extends Character{
-    private Scanner in;
     public Player(String name, int health, int baseDamage, String description){
         super(name, health, baseDamage, description);
-        in = new Scanner(System.in);
     } 
 
     @Override
@@ -31,11 +27,15 @@ public class Player extends Character{
         System.out.printf("%S has %d of %d health.\n", this.getName(), this.getHealth(), this.getMaxHealth());
         System.out.printf("The rogue AI %S has %d health.\n", other.getName(), other.getHealth());
         System.out.printf("Do you want to...\n");
-        System.out.printf("Attack? Enter 1\n");
-        System.out.printf("Defend? Enter 2\n");
-        System.out.printf("Repair your gear? Enter 3\n");
+        System.out.printf("  1: Attack?\n");
+        System.out.printf("  2: Defend?\n");
+        System.out.printf("  3: Repair your gear?\n");
+        if(this.hasItems())
+            System.out.printf("  4: Use an item?\n");
         System.out.printf("Enter your choice: ");
-        int choice = in.nextInt();
+        //int choice = Integer.parseInt(HackerGame.in.next());
+        int choice = HackerGame.in.nextInt();
+
         if(choice == 1){
             this.attack(other);
         } else if (choice == 2){
@@ -47,6 +47,12 @@ public class Player extends Character{
                                 this.getName(),
                                 hpHealed,
                                 this.getHealth());
+        } else if(choice == 4){
+            if(hasItems()){
+                this.useItem(this, other);
+            } else {
+                System.out.println("You dig through your bag but find no items. You lose a turn!!");
+            }
         }
     }
 }

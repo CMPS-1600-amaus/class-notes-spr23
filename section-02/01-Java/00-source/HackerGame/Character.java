@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.ArrayList;
 
 abstract public class Character {
     private int maxHealth;
@@ -6,6 +7,7 @@ abstract public class Character {
     private int baseDamage;
     private String name;
     private String description;
+    private ArrayList<Consumable> items;
 
     // Character Conditions:
     private int turnsVulnerable; // number of turns Character is vulnerable
@@ -25,6 +27,7 @@ abstract public class Character {
         this.description = description;
         this.tempDamageBuff = 1.0;
         rand = new Random();
+        items = new ArrayList<Consumable>();
     }
 
     @Override
@@ -151,5 +154,24 @@ abstract public class Character {
         this.tempDamageBuff = buff;
     }
 
-    
+    public void obtain(Consumable item){
+        items.add(item);
+    }
+
+    public void useItem(Character owner, Character other){
+        int i = 1;
+        System.out.printf("  Do you want to use:\n");
+        for(Consumable item : items){
+            System.out.printf("    %d: %S\n", i, item);
+            i++;
+        }
+        System.out.print("  Enter your choice: ");
+        int choice = HackerGame.in.nextInt();
+        items.get(choice-1).consume(owner, other);
+        items.remove(choice-1);
+    }
+
+    public boolean hasItems(){
+        return !items.isEmpty();
+    }
 }

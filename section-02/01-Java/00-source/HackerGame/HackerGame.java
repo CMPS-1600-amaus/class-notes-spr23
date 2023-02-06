@@ -1,14 +1,20 @@
+import java.util.Scanner;
 public class HackerGame {
+    static Scanner in = new Scanner(System.in);
     public static void main(String[] args){
 
         Player player = new Player("Aaron", 1000, 100, "A 5th grade hacker");
         System.out.println(player.toString());
+        player.obtain(new RedMonster());
+        player.obtain(new BlueLightBlockers());
 
         Computer computer = new Computer("Jonathan", 1000, 100, "Our doom!");
         System.out.println(computer.toString());
 
         //Character player2 = new Player("Aaron the 15th", 1337, 137, "Better than Aaron the 14th!");
         enterCombat(player, computer);
+
+        in.close();
     }
 
     public static void enterCombat(Player player, Computer computer){

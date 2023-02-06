@@ -18,7 +18,7 @@ abstract public class Character {
         this.numTurnsVulnerable = 0;
         this.rand = new Random();
         this.fledFlag = false;
-        this.weapon = new Weapon("Fists", 1);
+        this.weapon = new Weapon("Sword", "slashes", 6, this);
     }
 
     public String toString(){
@@ -39,6 +39,15 @@ abstract public class Character {
 
     public int getAttackPower(){
         return this.attackPower;
+    }
+
+    public Weapon getWeapon(){
+        return this.weapon;
+    }
+
+    public Weapon chooseWeapon(){
+        // choose the weapon to use
+        return this.weapon;
     }
 
     public int getChanceToHit(){
@@ -64,18 +73,8 @@ abstract public class Character {
     abstract public void takeTurn(Character other);
 
     public void attack(Character other) {
-        int attackRoll = rand.nextInt(100);
-        int chanceToHitModifier = 0;
-        if(other.isVulnerable()){
-            chanceToHitModifier = 20;
-            other.decrementTurnsVulnerable();
-        }
-        if(attackRoll < (getChanceToHit() + chanceToHitModifier)){
-            System.out.printf("%S slashes at %S for %d damage!\n", this.getName(), other.getName(), this.attackPower);
-            other.takeDamage(this.attackPower);
-        } else {
-            System.out.printf("%S MISSED!\n",getName());
-        }
+        Weapon weapon = this.chooseWeapon();
+        weapon.attack(other);
     }
 
     public void takeDamage(int damage) {

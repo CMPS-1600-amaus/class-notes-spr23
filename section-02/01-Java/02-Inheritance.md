@@ -96,3 +96,17 @@ public class QuarterBack implements Comparable, JFrame{
 ```
 
 In java, a class can only extend a single other class, but it can implement multiple interfaces.
+
+# Polymorphism
+
+**Polymorphism** says that if we have a superclass variable which stores a subclass object, when overridden methods are called, the correct version, depending on the actual subclass, will be used.
+
+For example:
+
+``` java
+Character character1 = new Player(....);
+Character character2 = new Computer(...);
+
+character1.takeTurn();
+character2.takeTurn();
+```
