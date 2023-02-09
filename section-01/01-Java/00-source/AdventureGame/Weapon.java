@@ -16,6 +16,11 @@ public class Weapon {
     }
 
     public void attack(Character other) {
+        if(this.wielder.isInvulnerable()){
+            System.out.printf("%S is Invulnerable!! Takes no damage!",this.wielder.getName());
+            this.wielder.decrementTurnsInvulnerable();
+            return;
+        }
         int attackRoll = rand.nextInt(100);
         int chanceToHitModifier = 0;
         if(other.isVulnerable()){
@@ -28,7 +33,7 @@ public class Weapon {
                                                                         this.descriptor,
                                                                         other.getName(), 
                                                                         finalDamage);
-            other.takeDamage(finalDamage);
+            other.modifyHealth(-finalDamage);
         } else {
             System.out.printf("%S MISSED!\n",wielder.getName());
         }

@@ -110,3 +110,12 @@ Character character2 = new Computer(...);
 character1.takeTurn();
 character2.takeTurn();
 ```
+
+# Comparable and Comparator
+
+Classes that implement `Comparable` override the `compareTo` Method, providing their default way of being ranked.
+
+A Comparator allows us to specify an alternative way of ranking objects.
+
+To use a Comparator, we create a comparator object which we can pass to a sorter. The comparators method for ranking objects will be used.
+

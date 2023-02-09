@@ -33,6 +33,6 @@ public class Hero extends Character {
     public void meditate(){
         System.out.printf("You got this. We believe in you.\n");
         setNumTurnsVulnerable(1);
-        this.takeDamage(-10);
+        this.modifyHealth(10);
     }
 }

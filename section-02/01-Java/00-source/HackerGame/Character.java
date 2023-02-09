@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.ArrayList;
 
-abstract public class Character {
+abstract public class Character implements Comparable<Character>{
     private int maxHealth;
     private int health;
     private int baseDamage;
@@ -39,6 +39,16 @@ abstract public class Character {
         output += "hp " + getHealth() + "\n";
         output += "damage " + getBaseDamage() + "\n";
         return output;
+    }
+
+    @Override
+    public int compareTo(Character other){
+        if(this.getHealth() < other.getHealth()){
+            return -1;
+        } else if(this.getHealth() < other.getHealth()){
+            return 1;
+        }
+        return 0;
     }
 
     public String getName(){

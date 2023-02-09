@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.ArrayList;
 
 abstract public class Character {
     private int health;
@@ -7,8 +8,10 @@ abstract public class Character {
     private int chanceToHit;
     private Random rand;
     private int numTurnsVulnerable;
+    private int numTurnsInvulnerable;
     private boolean fledFlag;
     private Weapon weapon;
+    private ArrayList<Consumable> items;
 
     public Character(String name, int health, int attackPower, int chanceToHit){
         this.name = name;
@@ -16,9 +19,11 @@ abstract public class Character {
         this.attackPower = attackPower;
         this.chanceToHit = chanceToHit;
         this.numTurnsVulnerable = 0;
+        this.numTurnsInvulnerable = 0;
         this.rand = new Random();
         this.fledFlag = false;
         this.weapon = new Weapon("Sword", "slashes", 6, this);
+        this.items = new ArrayList<Consumable>();
     }
 
     public String toString(){
@@ -50,6 +55,10 @@ abstract public class Character {
         return this.weapon;
     }
 
+    public void giveItem(Consumable item){
+        this.items.add(item);
+    }
+
     public int getChanceToHit(){
         return this.chanceToHit;
     }
@@ -66,8 +75,24 @@ abstract public class Character {
         return this.numTurnsVulnerable > 0;
     }
 
+    public int getNumTurnsInvulnerable(){
+        return this.numTurnsInvulnerable;
+    }
+
+    public void setNumTurnsInvulnerable(int numTurns){
+        this.numTurnsInvulnerable = numTurns;
+    }
+
+    public boolean isInvulnerable(){
+        return this.numTurnsInvulnerable > 0;
+    }
+
     public void decrementTurnsVulnerable(){
         this.numTurnsVulnerable--;
+    }
+
+    public void decrementTurnsInvulnerable(){
+        this.numTurnsInvulnerable--;
     }
 
     abstract public void takeTurn(Character other);
@@ -77,8 +102,8 @@ abstract public class Character {
         weapon.attack(other);
     }
 
-    public void takeDamage(int damage) {
-        this.health -= damage;
+    public void modifyHealth(int hp) {
+        this.health += hp;
     }
 
     public boolean isAlive(){
@@ -91,5 +116,9 @@ abstract public class Character {
 
     public void setAsFled(){
         this.fledFlag = true;
+    }
+
+    public void kill(){
+        this.health = 0;
     }
 }
