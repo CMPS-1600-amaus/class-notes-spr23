@@ -6,18 +6,10 @@ import java.util.ArrayList;
 
 public class ExceptionSandbox {
     public static void main(String[] args) {
-        //ArrayList<Integer> list = new ArrayList<Integer>();
-        //System.out.println(calcAverage(list));
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        System.out.println(calcAverage(list));
 
-        try {
-            BufferedReader input = new BufferedReader(new FileReader("myFile.txt"));
-            // some other line
-            // another one
-        } catch(IOException e) {
-            // possibly print error message that file not found.
-            e.printStackTrace(); // print list of methods leading to issue.
-            System.out.println(e.getMessage()); // print out this exceptions message.
-        }
+        //BufferedReader input = openFile("myFile.txt");
     }
 
     public static double calcAverage(ArrayList<Integer> list){
@@ -31,7 +23,7 @@ public class ExceptionSandbox {
     public static BufferedReader openFile(String filename){
         BufferedReader input = null;
         try {
-            input = new BufferedReader(new FileReader("myFile.txt"));
+            input = new BufferedReader(new FileReader(filename));
             // some other line
             // another one
         } catch(IOException e) {
