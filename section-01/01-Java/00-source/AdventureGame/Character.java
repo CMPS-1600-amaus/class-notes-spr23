@@ -1,4 +1,3 @@
-import java.util.Random;
 import java.util.ArrayList;
 
 abstract public class Character {
@@ -6,7 +5,6 @@ abstract public class Character {
     private int attackPower;
     private String name;
     private int chanceToHit;
-    private Random rand;
     private int numTurnsVulnerable;
     private int numTurnsInvulnerable;
     private boolean fledFlag;
@@ -20,7 +18,6 @@ abstract public class Character {
         this.chanceToHit = chanceToHit;
         this.numTurnsVulnerable = 0;
         this.numTurnsInvulnerable = 0;
-        this.rand = new Random();
         this.fledFlag = false;
         this.weapon = new Weapon("Sword", "slashes", 6, this);
         this.items = new ArrayList<Consumable>();

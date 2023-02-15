@@ -1,6 +1,7 @@
 import java.util.Scanner;
 public class HackerGame {
     static Scanner in = new Scanner(System.in);
+    
     public static void main(String[] args){
 
         Player player = new Player("Aaron", 1000, 100, "A 5th grade hacker");

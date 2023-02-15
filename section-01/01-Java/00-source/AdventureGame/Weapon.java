@@ -15,6 +15,11 @@ public class Weapon {
         this.rand = new Random();
     }
 
+    @Override
+    public String toString(){
+        return this.name;
+    }
+
     public void attack(Character other) {
         if(this.wielder.isInvulnerable()){
             System.out.printf("%S is Invulnerable!! Takes no damage!",this.wielder.getName());
