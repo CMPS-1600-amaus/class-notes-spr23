@@ -50,19 +50,24 @@ If we use a Linked List, we can insert and remove from either end in $O(1)$.
 
 We can use a Linked List to implement a stack efficiently.
 
-### Java Linked List
+See Stack.java.
 
-In java (and python), there is a data structure known as deque. a "double ended queue". This is a double linked list.
+# Queue
 
-``` java
+Queues are trivially simple, just like stacks. They operate like lines at the grocery store, and we can implement one using a LinkedList just like we did for a stack.
 
-public class Stack {
-    LinkedList lst = new LinkedList();
+## Operations
 
-    public void push(e element){
-        lst.append(element);
-    }
+- add/enqueue/push : adds an element to the queue
+- poll/dequeue : returns and removes an element from the queue
+- peek : return the next element from the queue
 
-    
-}
-```
+# Heaps
+
+A Heap is a binary tree that has a different ordering property than a BST.
+
+In a Heap, for every node, all of its children are smaller than it.
+
+Heaps are useful as priority queues and we can use their behavior in algorithms to process smaller entities first. 
+
+## Implementation

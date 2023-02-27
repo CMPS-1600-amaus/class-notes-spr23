@@ -53,3 +53,27 @@ When we pop an element off it, we will get back 3.
 ## Implementation
 
 We can use a Linked List. Inserting and Removing from the beginning or end of a linked list is $O(1)$
+
+# Queue
+
+A queue if First-In First-Out. The first element inserted will be the first element removed.
+
+Operations:
+
+- add/offer/enqueue : add an element to the queue
+- remove/poll/dequeue: returns and removes the next element from the queue
+- peek: return the next element on the queue
+
+Again, implement using a LinkedList
+
+# Heaps
+
+A Min-Heap is a Binary Trees where the element in every node is smaller than all of its children.
+
+We also can create a max heap.
+
+This means that the smallest element in the Heap is always at the root.
+
+Heaps are used to implement priority queues.
+
+The "poll" operation returns and removes the smallest element, the root element.
