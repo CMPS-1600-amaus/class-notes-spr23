@@ -79,3 +79,4 @@ Heaps are used to implement priority queues.
 The "poll" operation returns and removes the smallest element, the root element.
 
 ## Operations
+
