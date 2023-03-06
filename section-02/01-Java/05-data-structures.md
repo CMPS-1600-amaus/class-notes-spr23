@@ -77,3 +77,5 @@ This means that the smallest element in the Heap is always at the root.
 Heaps are used to implement priority queues.
 
 The "poll" operation returns and removes the smallest element, the root element.
+
+## Operations
