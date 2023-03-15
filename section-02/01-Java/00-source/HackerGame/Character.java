@@ -51,7 +51,7 @@ abstract public class Character implements Comparable<Character>{
         return 0;
     }
 
-    public String getName(){
+    public String getName() {
         return this.name;
     }
 

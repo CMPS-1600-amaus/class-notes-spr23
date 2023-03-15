@@ -55,3 +55,34 @@ Another goal was to keep the language as simple and small as possible.
 Once C was written, then it was used to write UNIX, and from there most other operating systems, many games, and many of languages. 
 
 ## So What is C?
+
+C is a system's language, designed with OS development as its goal.
+
+## Familiar Features
+
+- variables and variable types
+- arrays
+- control structures
+    - if-else
+    - switch
+    - while, do-while
+    - for
+    - break, continue
+- funtions
+    - recusive function
+
+## Unfamiliar Features
+- structs
+- pointers
+
+# Not in C
+- Not Objects or Classes
+- Access Modifers
+- booleans
+- strings
+
+C was intentionally kept very small, so some functionality like strings and booleans has to be included (import) to use.
+
+# A first example
+
+Let's write a twin prime number generator.
