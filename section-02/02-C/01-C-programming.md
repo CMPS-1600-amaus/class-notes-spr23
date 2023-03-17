@@ -86,3 +86,23 @@ C was intentionally kept very small, so some functionality like strings and bool
 # A first example
 
 Let's write a twin prime number generator.
+
+# Arrays
+
+An array is a collection of data, all of the same type, stored coniguously in memory.
+
+# Pointers
+
+A pointer is just a memory address. We can create pointers, or even get the memory addresses back from any variable we have.
+
+```c
+// num is a pointer. It holds a memory address
+int* num;
+```
+
+Given a variable, we can get its memory location via:
+
+```c
+int var = 0;
+&var
+```

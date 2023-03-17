@@ -1,7 +1,13 @@
 #include <stdio.h>
+#include <math.h>
 
 int isPrime(int num) {
-    
+    for(int i = 2; i < (int)sqrt(num)+1; i++){
+        if(num % i == 0) {
+            return 0;
+        }
+    }
+    return 1;
 }
 
 void generateTwinPrimes(int maxVal) {

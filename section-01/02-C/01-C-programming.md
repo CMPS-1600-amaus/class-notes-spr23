@@ -97,3 +97,21 @@ C was intentionally kept very small, so some functionality like strings and bool
 
 Let's write a twin prime number generator.
 
+## Arrays
+
+An array is a collection of data, all of the same type, stored contiguously in memory.
+
+In C, we can declare an array:
+
+```c
+// create an array that holds 50 ints
+int nums[50];
+```
+
+C arrays do not grow. Their size is set when they are created.
+
+C does not guard against index out of bounds errors.
+
+A c array is just a pointer in memory to be beginning of the array.
+
+When we index past the end of it, we are just moving forward in memory from that spot.
