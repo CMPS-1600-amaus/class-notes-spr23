@@ -95,14 +95,56 @@ An array is a collection of data, all of the same type, stored coniguously in me
 
 A pointer is just a memory address. We can create pointers, or even get the memory addresses back from any variable we have.
 
+There are two operators that allow us to either refer to the address of a variable or access the value at that address.
+
+`&` gets the address from a variable.
+
+```c
+int num = 10;
+printf("%p\n", &num);
+```
+
+`*` (known as the "dereferencing" operator) allows us to declare a pointer or to get the value that a pointer points to
+
 ```c
 // num is a pointer. It holds a memory address
-int* num;
+int num = 10;
+int* ptr = &num;
+printf("%p\n", ptr);
+printf("%d\n", *ptr);
 ```
 
-Given a variable, we can get its memory location via:
+## Pointers and Arrays
+
+Arrays and pointers are intimately tied together. An array is a contiguous set of bytes of memory.
+
+An array variable is a pointer to the first byte of the array.
 
 ```c
-int var = 0;
-&var
+int arr[10];
+arr[0] = 5;
+arr[1] = 4;
+// print out the memory address of arr[0]
+printf("%p\n", arr);
 ```
+
+### Pointer Arithmetic
+
+In we increment a pointer, it then points to the next thing in memory.
+
+```c
+int arr[10];
+arr[0] = 5;
+arr[1] = 4;
+// print out arr[0]
+printf("%d\n", *arr);
+// print out arr[1]
+printf("%d\n", *(arr+1));
+```
+
+C is smart enough to move forward to the next int, moving forward 4 bytes since an int is 32 bits.
+
+If the array held longs, we would expect to see pointer arithmetic move the pointer forward by 8 bytes.
+
+## Multidimensional Arrays
+
