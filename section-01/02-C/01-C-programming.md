@@ -185,4 +185,65 @@ We can create multidimensional arrays.
 int arr[4][5]; // like a table with 4 rows and 5 columns
 ```
 
-Every row has the same number of columns. 
+Every row has the same number of columns.
+
+We don't always want that.
+
+For example, if we want a list of strings, not every one will have the
+same number of characters.
+
+``` c
+char arr1[10][20]; // every string can have a max of 20 characters
+char* arr2[10]; // an array of 10 pointers, each a pointer to a string in memory.
+```
+
+## Command Line Args
+
+C programs (and python, java, etc...) can take in command line arguments to modify
+the behavior of the program.
+
+If a C program takes in command line arguments, the main method must take
+in two parameters:
+
+- `int argc`: "arg count", the number of command line args, including the program name
+- `char* argv[]`: the array of command line arguments.
+
+``` c
+int main(int argc, char* argv[]) {
+
+}
+```
+
+## Memory Allocation
+
+When a program will need memory, but how much isn't known until run time, we need
+to dynamically allocate and free memory.
+
+- `void* malloc(int bytes)`: memory allocate
+- `free`: free allocated memory
+
+`malloc` takes in the number of bytes requested and returns a pointer to beginning of
+the allocated memory.
+
+Useful function:
+
+- `sizeof()`: return the size of a c data type
+
+```c
+sizeof(int); //returns the number of bytes each int requires
+```
+
+## Structs
+
+A struct is a collection of one or more variables grouped together under a
+common name.
+
+syntax:
+
+```c
+typedef struct point3D {
+    double x;
+    double y;
+    double z;
+} point3d;
+```

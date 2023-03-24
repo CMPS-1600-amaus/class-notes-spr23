@@ -148,3 +148,71 @@ If the array held longs, we would expect to see pointer arithmetic move the poin
 
 ## Multidimensional Arrays
 
+```c
+int arr[4][5]; // like a table with 4 rows and 5 columns
+arr[1][2] = 7;
+```
+
+Every row has the same number of columns.
+
+We don't always want that.
+
+For example, if we want a list of strings, we can use a 2D array:
+
+```c
+char arr1[10][80];
+```
+
+Each of these strings can have no more than 80 characters.
+
+What if we wanted to store variable size strings. We don't know how large they may be?
+
+```c
+char* arr2[10]; // a array of 10 pointers, each to a string in memory
+```
+
+## Command Line Arguments
+
+C programs (and python, java, etc...) can take in command line arguments to modify the behavior of a program.
+
+If a c program takes in cmd line args, its main method must take in two parameters:
+
+- `int argc`: "arg count", the number of cmd line args, including the program name
+- `char* argv[]`: the array of command line arguments.
+
+```c
+int main(int argc, char* argv[]){
+
+}
+```
+
+# Memory Allocation
+
+Useful when a program will need memory, but won't know how much until it is running,
+that is when we need to dynamically allocate and free memory.
+
+- `void* malloc(int bytes)`: memory allocate
+- `free(void*)`: free allocated memory
+
+`malloc` takes in the number of bytes requested and returns a pointer to
+the beginning of the allocated memory.
+
+Useful function:
+- `sizeof(type)`: returns the size of a the type in bytes
+
+```c
+sizeof(int); //returns the number of bytes an int requires.
+```
+
+## Structs
+
+A struct is a collection of one or more variables grouped together under
+a common name.
+
+```c
+typedef struct point3D {
+    double x;
+    double y;
+    double z;
+} point3D;
+```
