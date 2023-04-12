@@ -13,5 +13,6 @@ class Atom {
 
     public:
     Atom(string name, double x, double y, double z);
+    Atom(const Atom &atom);
     void print();
 };
