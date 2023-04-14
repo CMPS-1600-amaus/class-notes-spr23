@@ -3,11 +3,11 @@
 #include "Shape.hpp"
 #endif
 
-class Circle: public Shape {
-    double radius;
+class Square: public Shape {
+    double len;
 
     public:
-    Circle(double radius);
+    Square(double len);
     void print();
     double area();
 };

@@ -7,4 +7,5 @@ class Shape {
     Shape(string name);
     // virtual indicates that this function can be overridden
     virtual void print();
+    virtual double area() = 0;
 };

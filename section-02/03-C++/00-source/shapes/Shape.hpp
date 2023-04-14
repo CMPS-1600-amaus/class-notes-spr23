@@ -8,4 +8,5 @@ class Shape {
     Shape(string name);
     // virtual means that pring is overridable
     virtual void print();
+    virtual double area() = 0;
 };
